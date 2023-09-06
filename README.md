@@ -9,7 +9,7 @@ Dieser Release ist noch **nicht** final. Weitere Übersetzungen und Updates komm
 Bitte fertige ein Backup an, falls diese Version _nicht_ kompatibel ist!
 
 Falls keine Spieler, Daten usw. laden, kann die "header.ejs" ausgetauscht werden, dann sollte es wieder gehen.
-Diese findest du unter diesem Pfad: deinserver/alpine/opt/cfx-server/citizen/system_resources/monitor/web/parts
+Diese findest du unter diesem Pfad: deinserver/alpine/opt/cfx-server/citizen/system_resources/monitor/web/parts   
 (**Hinweis:** Dadurch wird die Leiste ganz links und die Übersetzung der Spieler anzeige rechts, zurückgesetzt)
 
 Außerdem kann man bei Bedarf die Logos ersetzten. 
@@ -19,7 +19,7 @@ Diese findest du in diesem Pfad: deinserver/alpine/opt/cfx-server/citizen/system
 **Installation:** 
 1. Lade die neuste .zip oder .rar Datei herunter
 2. Öffne die Datei und überschreibe den alpine Ordner
-3. Starte den Server neu (nicht den txAdmin Server)
+3. Starte den Server neu (nicht den FiveM Server)
 
 
 **Was wurde geändert?**
