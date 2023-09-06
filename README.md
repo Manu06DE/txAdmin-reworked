@@ -1,6 +1,9 @@
 
 txAdmin übersetzt in die Deutsche Sprache.
 
+txAdmin Version: v6.0.2   
+FXServer Version: 6645
+
 Dieser Release ist noch **nicht** final. Weitere Übersetzungen und Updates kommen noch.
 
 Bitte fertige ein Backup an, falls diese Version _nicht_ kompatibel ist!
@@ -14,13 +17,14 @@ Diese findest du in diesem Pfad: deinserver/alpine/opt/cfx-server/citizen/system
 
 
 **Installation:** 
-1. Lade die .zip oder .rar Datei herunter
+1. Lade die neuste .zip oder .rar Datei herunter
 2. Öffne die Datei und überschreibe den alpine Ordner
 3. Starte den Server neu (nicht den txAdmin Server)
 
+
 **Was wurde geändert?**
 
-- Vieles wurde auf Deutsch übersetzt
+- Vieles wurde auf Deutsch übersetzt (mehr kommt noch)
 - MasterActions wurde ausgeblendet (trotzdem weiterhin verfügbar unter der URL: /masterActions)
 - Ein kleines Notizen-Feld im Dashboard (Notizen sind nur für einen selbst einsehbar und NICHT Geräte übergreifend.)
 - Live-Konsole kann man nicht mehr leeren und es können nun 14 statt 12 Befehle gespeichert werden
