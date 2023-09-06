@@ -1,0 +1,204 @@
+<!-- Player info modal -->
+<div class="modal fade" id="modPlayer" tabindex="-1" role="dialog" aria-labelledby="modPlayerTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="min-width: 680px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modPlayerTitle">Laden...</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body" style="min-height: 300px;">
+                <div class="text-center p-3" style="height: 100px; font-size: larger;" id="modPlayerMessage">
+                    <div class="txSpinner">Laden...</div>
+                </div>
+                <div class="row p-0 d-none" id="modPlayerContent">
+
+                    <div class="col-3 border-right">
+                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <a class="nav-link active" id="modPlayerMain-tab" data-toggle="pill" href="#modPlayerMain" role="tab" 
+                                aria-controls="modPlayerMain" aria-selected="true"><i class="icon-user"></i> Info</a>
+                            <a class="nav-link" id="modPlayerIDs-tab" data-toggle="pill" href="#modPlayerIDs" role="tab" 
+                                aria-controls="modPlayerIDs" aria-selected="false"><i class="icon-list"></i> IDs</a>
+                            <a class="nav-link" id="modPlayerHistory-tab" data-toggle="pill" href="#modPlayerHistory" role="tab" 
+                                aria-controls="modPlayerHistory" aria-selected="false"><i class="icon-notebook"></i> Historie</a>
+                            <a class="nav-link nav-link-red" id="modPlayerBan-tab" data-toggle="pill" href="#modPlayerBan" role="tab" 
+                                aria-controls="modPlayerBan" aria-selected="false"><i class="icon-shield"></i> Bannen</a>
+                        </div>
+                    </div> <!-- End Col -->
+
+                    <div class="col-9">
+                        <div class="tab-content">
+
+                            <!-- Tab modPlayerMain -->
+                            <div class="tab-pane fade show active" id="modPlayerMain" role="tabpanel" aria-labelledby="modPlayerMain-tab" style="font-size: medium;">
+                                <div id="modPlayerMain-sessionTimeDiv">
+                                    <strong>Dauer der Sitzung:</strong> <span id="modPlayerMain-sessionTimeText">--</span> <br>
+                                </div>
+                                <strong>Spielzeit:</strong> <span id="modPlayerMain-playTime">--</span> <br>
+                                <strong>Beitrittsdatum:</strong> <span id="modPlayerMain-joinDate">--</span> <br>
+                                <div id="modPlayerMain-lastConnectionDiv">
+                                    <strong>Letzte Verbindung:</strong> <span id="modPlayerMain-lastConnectionText">--</span> <br>
+                                </div>
+
+                                <strong>Whitelisted:</strong>
+                                <span id="modPlayerMain-whitelisted">noch nicht</span>
+                                <button class="btn btn-inline-sm btn-success" type="button" id="modPlayerMain-whitelistAddBtn">
+                                    HINZUFÜGEN
+                                </button>
+                                <button class="btn btn-inline-sm btn-dark" type="button" id="modPlayerMain-whitelistRemoveBtn">
+                                    ENTFERNEN
+                                </button>
+                                <br>
+
+                                <strong>Logs:</strong>
+                                <span id="modPlayerMain-logCountBans" class="text-danger">1 ban</span>,
+                                <span id="modPlayerMain-logCountWarns" class="text-warning">2 warns</span>
+                                <button class="btn btn-inline-sm btn-dark" type="button" id="modPlayerMain-logDetailsBtn">
+                                    DETAILS
+                                </button>
+                                <br>
+
+                                <div class="form-group row m-0 mt-2">
+                                    <label for="modPlayerFormNotes">
+                                        <strong>Notizen:</strong>
+                                        <span id="modPlayerMain-notesLog" class="text-muted">
+                                            --
+                                        </span>
+                                    </label>
+                                    <textarea class="form-control" id="modPlayerMain-notes" rows="3" 
+                                        placeholder="Insert notes here regarding this player."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Tab modPlayerIDs -->
+                            <div class="tab-pane fade" id="modPlayerIDs" role="tabpanel" aria-labelledby="modPlayerIDs-tab">
+                                <style>
+                                    /* NOTE: this really shouldn't be here, but it's very temporary */
+                                    .scrollBox {
+                                        max-height: 55vh;
+                                        overflow-y: scroll;
+                                        padding-right: 10px;
+                                    }
+                                    .idsText {
+                                        border-radius: 4px;
+                                        padding: 6px 8px;
+                                        margin-bottom: 7px;
+                                        display: flex;
+                                        align-items: center;
+                                        font-family: monospace;
+                                        font-size: medium;
+                                        letter-spacing: 0.05rem;
+                                    }
+                                </style>
+                                
+                                <div class="thin-scroll scrollBox">
+                                    <div class="mb-3">
+                                        <h5>Aktuelle Identifikatoren:</h5>
+                                        <div id="modPlayerIDs-currList" >
+                                            Laden...
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <h5>Früher verwendete Identifikatoren:</h5>
+                                        <div id="modPlayerIDs-oldList">
+                                            Laden...
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <h5>Hardware IDs:</h5>
+                                        <div id="modPlayerIDs-hwidsList">
+                                            Laden...
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tab modPlayerHistory -->
+                            <div class="tab-pane fade" id="modPlayerHistory" role="tabpanel" aria-labelledby="modPlayerHistory-tab">
+                                <h5>Historie:</h5>
+                                <div class="list-group list-group-accent" id="modPlayerHistory-log">
+                                    Laden...
+                                </div>
+                            </div>
+
+                            <!-- Tab modPlayerBan -->
+                            <div class="tab-pane fade" id="modPlayerBan" role="tabpanel" aria-labelledby="modPlayerBan-tab">
+                                <div class="form-group row">
+                                    <label for="modPlayerBan-reason" class="col-sm-3 col-form-label">
+                                        Grund
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="modPlayerBan-reason" maxlength="256"
+                                            placeholder="Hat schlechte dinge gemacht :(">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="modPlayerBan-durationSelect" class="col-sm-3 col-form-label">
+                                        Dauer
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" id="modPlayerBan-durationSelect">
+                                            <option value="2 hours">2 Stunden</option>
+                                            <option value="8 hours">8 Stunden</option>
+                                            <option value="1 day">1 Tag</option>
+                                            <option value="2 days" selected>2 Tage</option>
+                                            <option value="1 week">1 Woche</option>
+                                            <option value="2 weeks">2 Wochen</option>
+                                            <option value="permanent" class="font-weight-bold text-danger">Permanent</option>
+                                            <option value="custom" class="font-weight-bold">Benutzerdefiniert</option>
+                                        </select>
+                                        <div class="row mt-2">
+                                            <div class="col-sm-3 pr-0">
+                                                <input type="number" class="form-control" id="modPlayerBan-durationMultiplier" 
+                                                    maxlength="3" placeholder="7" disabled>
+                                            </div>
+                                            <div class="col-sm-9 pl-2">
+                                                <select class="form-control" id="modPlayerBan-durationUnit" disabled>
+                                                    <option value="hours">Stunden</option>
+                                                    <option value="days" selected>Tage</option>
+                                                    <option value="weeks">Wochen</option>
+                                                    <option value="months">Monate</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <span class="form-text text-muted">
+                                            <b>Info:</b> Der Ban gilt für alle Identifikatoren des Spielers.
+                                        </span>
+                                    </div>
+                                </div>
+            
+                                <div class="text-center mt-4">
+                                    <button class="btn btn-sm btn-danger" type="submit" 
+                                        id="modPlayerButtons-ban" onclick="banPlayer()">
+                                        <i class="icons cui-check"></i> Spieler Bannen
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div> <!-- End Col -->
+
+                </div> <!-- End Row -->
+            </div> <!-- End Modal Body -->
+            <div class="modal-footer align-items-end <%= (!isWebInterface ? 'd-none' : 'd-flex') %>">
+                <button type="button" class="btn btn-outline-dark"
+                    id="modPlayerButtons-message" onclick="messagePlayer()">
+                    <i class="icon-speech"></i> DM
+                </button>
+                <button type="button" class="btn btn-outline-dark"
+                    id="modPlayerButtons-kick" onclick="kickPlayer()">
+                    <i class="icon-ban"></i> Kicken
+                </button>
+                <button type="button" class="btn btn-outline-warning"
+                    id="modPlayerButtons-warn" onclick="warnPlayer()">
+                    <i class="icon-exclamation"></i> Warnen
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
