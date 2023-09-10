@@ -35,6 +35,13 @@ Bitte fertige ein Backup an, falls diese Version **_nicht_** kompatibel ist!
 - Admin Manager
 - System Logs
 
+## Was (noch nicht) umsetzbar ist/ Was in zukunft kommt
+- Werbung entfernen (ich arbeite an einer Lösung)
+- Dashboard Server Status übersetzungen
+- Ingame Menü auf Deutsch übersetzten
+- Weitere txAdmin Features o. Ä. hinzufügen
+
+ 
 ## Fehlerbehebung
 Falls keine Spieler, Daten usw. laden, kann die "header.ejs" ausgetauscht werden, dann sollte es wieder gehen.
 Diese findest du unter diesem Pfad: deinserver/alpine/opt/cfx-server/citizen/system_resources/monitor/web/parts
