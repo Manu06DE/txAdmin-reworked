@@ -1,4 +1,4 @@
-
+## Allgemeines und Hinweise
 txAdmin übersetzt in die Deutsche Sprache.
 
 txAdmin Version: v6.0.2   
@@ -9,24 +9,15 @@ Diese Version beinhaltet alle gelisteten Funktionen
 
 Dieser Release ist noch **nicht** final. Weitere Übersetzungen und Updates kommen noch.
 
-Bitte fertige ein Backup an, falls diese Version _nicht_ kompatibel ist!
+Bitte fertige ein Backup an, falls diese Version **_nicht_** kompatibel ist!
 
-Falls keine Spieler, Daten usw. laden, kann die "header.ejs" ausgetauscht werden, dann sollte es wieder gehen.
-Diese findest du unter diesem Pfad: deinserver/alpine/opt/cfx-server/citizen/system_resources/monitor/web/parts   
-(**Hinweis:** Dadurch wird die Leiste ganz links und die Übersetzung der Spieler anzeige rechts, zurückgesetzt)
-
-Außerdem kann man bei Bedarf die Logos ersetzten. 
-Diese findest du in diesem Pfad: deinserver/alpine/opt/cfx-server/citizen/system_resources/monitor/web/public/img
-
-
-**Installation:** 
-1. Lade die neuste .zip oder .rar Datei herunter
+## Installation
+1. Lade die neuste .zip, .rar, .7z oder .tar Datei herunter
 2. Öffne die Datei und überschreibe den alpine Ordner
 3. Starte den Server neu (nicht den FiveM Server)
 
 
-**Was wurde geändert?**
-
+## Was geändert wurde
 - Vieles wurde auf Deutsch übersetzt (mehr kommt noch)
 - MasterActions wurde ausgeblendet (trotzdem weiterhin verfügbar unter der URL: /masterActions)
 - Ein kleines Notizen-Feld im Dashboard (Notizen sind nur für einen selbst einsehbar und NICHT Geräte übergreifend.)
@@ -37,5 +28,33 @@ Diese findest du in diesem Pfad: deinserver/alpine/opt/cfx-server/citizen/system
 - Oben neben dem Benutzernamen, gibt es nun ein Dropdown Menü mit 1/2 "Nützlichen" Tools
 - Eins / zwei kleinere Änderungen
 
+
+## Folgende Seiten sind schon vollständig übersetzt
+- Login Screen
+- 404 Seite
+- Live Konsole
+- Ressourcen
+- Server Logs
+- CFG Editor
+- Admin Manager
+- System Logs
+
+## Fehlerbehebung
+Falls keine Spieler, Daten usw. laden, kann die "header.ejs" ausgetauscht werden, dann sollte es wieder gehen.
+Diese findest du unter diesem Pfad: deinserver/alpine/opt/cfx-server/citizen/system_resources/monitor/web/parts   
+(**Hinweis:** Dadurch wird die Leiste ganz links und die Übersetzung der Spieler anzeige rechts, zurückgesetzt)
+
+**ODER**
+
+Falls der Server nicht einwandfrei funktioniert, kannst du die bereitgelegte index.js Datei im folgenden Pfad ersetzten:
+txData/alpine/opt/cfx-server/citizen/system_resources/monitor/core/
+
+
+## Sonstiges
+Außerdem kann man bei Bedarf die Logos ersetzten. 
+Diese findest du in diesem Pfad: deinserver/alpine/opt/cfx-server/citizen/system_resources/monitor/web/public/img
+
+
+## Bilder
 ![Bild_2023-09-06_173944125](https://github.com/Manu06DE/txAdmin-German/assets/109236239/5e96b69d-24cc-4895-a58a-b9a3080f8e9c)
 ![Bild_2023-09-06_174011576](https://github.com/Manu06DE/txAdmin-German/assets/109236239/c0fa31d5-abab-41c1-85bf-e84490266c6f)
