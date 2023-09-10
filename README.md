@@ -31,6 +31,7 @@ Diese findest du in diesem Pfad: deinserver/alpine/opt/cfx-server/citizen/system
 - Server Logs kann man nicht mehr löschen
 - Eine kleine Veränderung der Ordnung im Linken Bereich
 - Der Login Screen wurde verändert
+- Oben neben dem Benutzernamen, gibt es nun ein Dropdown Menü mit 1/2 "Nützlichen" Tools
 - Eins / zwei kleinere Änderungen
 
 ![Bild_2023-09-06_173944125](https://github.com/Manu06DE/txAdmin-German/assets/109236239/5e96b69d-24cc-4895-a58a-b9a3080f8e9c)
