@@ -1,4 +1,4 @@
-## Allgeimenes und Hinweise
+## Allgemeines und Hinweise
 
 txAdmin übersetzt in die Deutsche Sprache.
 
