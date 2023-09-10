@@ -20,6 +20,7 @@ Bitte fertige ein Backup an, falls diese Version **_nicht_** kompatibel ist!
 - Server Logs kann man nicht mehr löschen
 - Eine kleine Veränderung der Ordnung im Linken Bereich
 - Der Login Screen wurde verändert
+- Oben neben dem Benutzernamen, gibt es nun ein Dropdown Menü mit 1/2 Tools
 - Das Limit bei "Letzte 25 Aktionen" & "Letzte 30 verbundene Spieler" wurde auf 40 gesetzt.
 - Eins / zwei kleinere Änderungen
 
