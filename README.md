@@ -4,6 +4,9 @@ txAdmin übersetzt in die Deutsche Sprache.
 txAdmin Version: v6.0.2   
 FXServer Version: 6645
 
+Bitte Downloade die **Neuste** version über Releases!
+Diese Version beinhaltet alle gelisteten Funktionen
+
 Dieser Release ist noch **nicht** final. Weitere Übersetzungen und Updates kommen noch.
 
 Bitte fertige ein Backup an, falls diese Version _nicht_ kompatibel ist!
