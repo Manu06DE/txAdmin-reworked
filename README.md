@@ -1,106 +1,60 @@
-<p align="center">
-	<h1 align="center">
-		txAdmin for FiveM
-	</h1>
-	<p align="center">
-		<img width="420" height="237" src="docs/banner.png">
-	</p>
-	<h4 align="center">
-		Join our Discord Server: &nbsp; <a href="https://discord.gg/AFAAXzq"><img src="https://discordapp.com/api/guilds/577993482761928734/widget.png?style=shield"></img></a>
-	</h4>
-	<p align="center">
-		<b>txAdmin</b> is a <b>full featured</b> web panel to Manage & Monitor your FiveM/RedM Server remotely, in use by over <strong>21.000</strong> servers worldwide at any given time.
-	</p>
-	<p align="center">
-		<a href="https://zap-hosting.com/txadmin4" target="_blank" rel="noopener">
-			<img src="docs/zaphosting.png" alt="zap-hosting"></img>
-		</a>
-	</p>
-</p>
+## Allgeimenes und Hinweise
 
-<br/>
+txAdmin übersetzt in die Deutsche Sprache.
 
+Dieser Release ist noch **nicht** final. Weitere Übersetzungen und Updates kommen noch.
 
-## Main Features
-- Recipe-based Server Deployer: create a server in under 60 seconds! ([more info](docs/recipe.md))
-- Start/Stop/Restart your server instance or resources
-- Full-featured in-game admin menu:
-	- Player Mode: NoClip, God, SuperJump
-	- Teleport:  waypoint, coords and back
-	- Vehicle: Spawn, Fix, Delete, Boost
-	- Heal: yourself, everyone
-	- Send Announcements
-	- Reset World Area
-	- Show player IDs
-	- Player search/sort by distance, ID, name
-	- Player interactions: Go To, Bring, Spectate, Freeze
-	- Player troll: make drunk, set fire, wild attack
-	- Player ban/warn/dm
-- Access control:
-	- Login via Password or CitizenFX
-	- Admin permission system ([more info](docs/permissions.md))
-	- Action logging
-	- Brute-force protection
-- Discord Integration:
-	- Server configurable, persistent, auto-updated status embed
-	- Command to whitelist players
-	- Command to display player infos
-- Monitoring:
-	- Auto Restart FXServer on crash or hang
-	- Server’s CPU/RAM consumption
-	- Live Console (with log file and command history)
-	- Server tick time performance chart with player count ([example](https://i.imgur.com/VG8hpzr.gif))
-	- Server Activity Log (connections/disconnections, kills, chat, explosions and [custom commands](docs/custom_serverlog.md))
-- Player Manager:
-	- [Warning system](https://www.youtube.com/watch?v=DeE0-5vtZ4E)
-	- Ban (temporary or permanently) system
-	- Whitelist system (Discord member, Discord Role, Approved License, Admin-only)
-	- Take notes about players
-	- Keep track of player's play and session time
-	- Self-contained player database with backup tool (no MySQL required!)
-	- Clean/Optimize the database by removing old players, or bans/warns/whitelists
-- Real-time playerlist
-- Scheduled restarts with warning announcements and custom events ([more info](docs/events.md))
-- Translation Support ([more info](docs/translation.md))
-- FiveM's Server CFG editor & validator
-- Responsive(ish) web interface with Dark Mode 😎
+Bitte fertige ein Backup an, falls diese Version **_nicht_** kompatibel ist!
 
-Also, check our [Feature Graveyard](docs/feature_graveyard.md) for the features that are no longer among us (RIP).
+## Installation
+1. Lade die .zip, .rar, .7z oder .tar Datei herunter
+2. Öffne die Datei und überschreibe den alpine Ordner
+3. Starte den Server neu (nicht den txAdmin Server)
 
-## Running (Windows/Linux)
-**txAdmin is included in all FXServer builds** above 2524, so to run it for the first time simply do the following:
-- Update FXServer to the latest artifact/build (2524 or superior)
-- If Windows, run FXServer.exe | If Linux, run `screen ./run.sh`
-- Open one of the URLs shown and configure txAdmin
+## Was geändert wurde
 
-txAdmin requires to be launched from *inside* FXServer in monitor mode, to do that, just execute the `run.sh` or `FXServer.exe` without **any** `+exec` arguments.  
-  
-### ConVars
-- **serverProfile:** The name of the server profile to start. Profiles are saved/loaded from the current directory inside the `txData` folder. The default is `default`.
-- **txAdminPort:** The TCP port to use as HTTP Server. The default is `40120`.
-- **txAdminInterface:** The interface to use as HTTP Server. The default is `0.0.0.0`.
-- **txDataPath:** The path of the data folder. The default on Windows is `<citizen_root>/../txData` and on Linux `<citizen_root>/../../../txData`.
-- **txAdminVerbose:** Set to `true` to print on the console more detailed information about errors and events. The default is `false`.
-  
-ConVar usage **example** for different port and profile:  
-```bash
-# Windows
-./FXServer.exe +set serverProfile dev_server +set txAdminPort 40121
-
-# Linux
-./run.sh +set serverProfile dev_server +set txAdminPort 40121
-```
-
-### Contributing & Development
-- All PRs should be based on the develop branch, specially translation PRs.
-- Before putting effort for any significant PR, make sure to join our discord and talk to us, since the change you want to do might not have been done for a reason or there might be some required context.
-- If you want to run it from build & source, please do read [this](docs/development.md).
+- Vieles wurde auf Deutsch übersetzt
+- MasterActions wurde ausgeblendet (trotzdem weiterhin verfügbar unter der URL: /masterActions)
+- Ein kleines Notizen-Feld im Dashboard (Notizen sind nur für einen selbst einsehbar und NICHT Geräte übergreifend.)
+- Live-Konsole kann man nicht mehr leeren und es können nun 14 statt 12 Befehle gespeichert werden
+- Server Logs kann man nicht mehr löschen
+- Eine kleine Veränderung der Ordnung im Linken Bereich
+- Der Login Screen wurde verändert
+- Das Limit bei "Letzte 25 Aktionen" & "Letzte 30 verbundene Spieler" wurde auf 40 gesetzt.
+- Eins / zwei kleinere Änderungen
 
 
-## License, Credits and Thanks
-- This project is licensed under the [MIT License](https://github.com/tabarra/txAdmin/blob/master/LICENSE);
-- [Favicons](https://www.flaticon.com/free-icon/support_1545728?term=gear%20wrench&page=2&position=11) made by Freepik from [www.flaticon.com](https://www.flaticon.com) are licensed under [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/);
-- Warning Sounds ([1](https://freesound.org/people/Ultranova105/sounds/136756/)/[2](https://freesound.org/people/Ultranova105/sounds/136754/)) made by Ultranova105 are licensed under [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/);
-- [Announcement Sound](https://freesound.org/people/IENBA/sounds/545495/) made by IENBA is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/);
-- [Message Sound](https://freesound.org/people/Divinux/sounds/198414/) made by Divinux is licensed under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/);
-- Special thanks to everyone that contributed to this project, specially the very fine Discord folks that provide support for others;
+## Folgende Seiten sind schon vollständig übersetzt
+- Login Screen
+- 404 Seite
+- Live Konsole
+- Ressourcen
+- Server Logs
+- CFG Editor
+- Admin Manager
+- System Logs
+
+## Fehlerbehebung
+Falls keine Spieler, Daten usw. laden, kann die "header.ejs" ausgetauscht werden, dann sollte es wieder gehen.
+Diese findest du unter diesem Pfad: deinserver/alpine/opt/cfx-server/citizen/system_resources/monitor/web/parts
+(**Hinweis:** Dadurch wird die Leiste ganz links und die Übersetzung der Spieler anzeige rechts, zurückgesetzt)
+
+**ODER / UND**
+
+Falls der Server nicht einwandfrei funktioniert, kannst du die bereitgelegte index.js Datei im folgenden Pfad ersetzten:
+txData/alpine/opt/cfx-server/citizen/system_resources/monitor/core/
+
+
+## Sonstiges
+Außerdem kann man bei Bedarf die Logos ersetzten. 
+Diese findest du in diesem Pfad: deinserver/alpine/opt/cfx-server/citizen/system_resources/monitor/web/public/img
+
+
+
+## Bilder
+![Bild_2023-09-06_173944125](https://github.com/Manu06DE/txAdmin-German/assets/109236239/5e96b69d-24cc-4895-a58a-b9a3080f8e9c)
+![Bild_2023-09-06_174011576](https://github.com/Manu06DE/txAdmin-German/assets/109236239/c0fa31d5-abab-41c1-85bf-e84490266c6f)
+![Bild_2023-09-10_220559697](https://github.com/Manu06DE/txAdmin-reworked/assets/109236239/dde0d5b9-76f1-4a60-9e77-dd190a404180)
+![Bild_2023-09-10_220706128](https://github.com/Manu06DE/txAdmin-reworked/assets/109236239/e39ebf63-c257-4e6b-ae52-32b577d73e9e)
+![image](https://github.com/Manu06DE/txAdmin-reworked/assets/109236239/83b598bc-a78b-4614-a49d-ecdabc53949f)
+![image](https://github.com/Manu06DE/txAdmin-reworked/assets/109236239/c40a04c3-45f4-4963-a0c3-2866a6699fa1)
