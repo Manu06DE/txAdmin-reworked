@@ -7,9 +7,35 @@ Dieser Release ist noch **nicht** final. Weitere Übersetzungen und Updates komm
 Bitte fertige ein Backup an, falls diese Version **_nicht_** kompatibel ist!
 
 ## Installation
-1. Lade die .zip, .rar, .7z oder .tar Datei herunter
-2. Öffne die Datei und überschreibe den alpine Ordner
-3. Starte den Server neu (nicht den txAdmin Server)
+1. Lade einer der `.zip` oder `.rar` Dateien über [Releases](https://github.com/Manu06DE/txAdmin-reworked/releases/) herunter
+2. Öffne die Datei und ziehe die Datei in, entweder den vorhandenen txData Ordner
+   **ODER** ziehe alle Datein in ein Leeres Verzeichnis (Je nach installationsart & Betriebsystem unterschiedlich)
+4. Starte den Server neu
+
+**Bei Kompletten "neuinstallationen":**
+1. Gehe in den Ordner Pfad (Bei Linux systemen: `cd /pfad/zu/der/run.sh` datei)
+2. Führe die Datei aus. (Bei Linux systemen: `./run.sh`)
+
+
+
+NUR Linux: Damit die Datei immer ausführt erstelle einen (am besten) Cronjob
+1. `crontab -e`
+2. `@reboot /pfad/zur/run.sh` datei
+3. Den Crobjob Speichern
+
+## 4 verschiedene Installationarten
+- Es gibt, seid diesem v1.3 Update 4 verschiedene Installationsarten.
+- Jede Installationsart gibt es einmal als  `.rar ` und als  `.zip `
+
+Es gibt nun txAdmin auch für die Win32 version.
+
+Die `txAdmin-full-`installationen, sind komplette txAdmin Installationen, also so, wie ihr sie auch über die [artifacts (linux)](https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/) / [artifacts (win32)](https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/) downloaden würdet
+
+Bei der `txAdmin-easy-`installation muss man nur dein jeweiliger Ordner ersetzten. Dies ist anwendbar, wenn txAdmin bereits installiert ist.
+
+Der name `..-install-linux` oder `..-install-win32` beschreibt das Betriebssystem
+
+Zu jedem Archiv wurden 2 Extra datein mit geliefert namens `header.ejs` und `index.js`, diese können dann ersetzt werden, falls probleme auftreten. Siehe dafür den [Issue](https://github.com/Manu06DE/txAdmin-reworked/issues/1), den ich dafür aufgemacht habe.
 
 ## Was geändert wurde
 
@@ -34,13 +60,19 @@ Bitte fertige ein Backup an, falls diese Version **_nicht_** kompatibel ist!
 - CFG Editor
 - Admin Manager
 - System Logs
+- Server Deployer
+- Server Setup Screen
 
-## Was (noch nicht) umsetzbar ist/ Was in zukunft kommt
+
+## Was (derzeit) nicht machbar ist
 - Werbung entfernen (ich arbeite an einer Lösung)
+- Auf jede FXServer Version ein Update erstellen
+
+## Was in zukunft geplant ist:
 - Dashboard Server Status übersetzungen
 - Ingame Menü auf Deutsch übersetzten
 - Weitere txAdmin Features o. Ä. hinzufügen
-
+- Zeitnahe neuveröffentlichung von neuen txAdmin Updates, damit man immer auf dem Neusten Stand ist
  
 ## Fehlerbehebung
 Falls keine Spieler, Daten usw. laden, kann die "header.ejs" ausgetauscht werden, dann sollte es wieder gehen.
