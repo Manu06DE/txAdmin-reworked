@@ -380,19 +380,19 @@
                 draw(parsedPerfData);
             }else{
                 if(parsedPerfData.failReason == 'not_set'){
-                    draw('chart database still loading');
+                    draw('Diagrammdatenbank wird noch geladen');
                 }else if(parsedPerfData.failReason == 'not_enough_data'){
-                    draw('Players & Performance chart will be available in an hour.');
+                    draw('Spieler & Leistungstabelle wird in einer Stunde verfügbar sein.');
                 }else if(parsedPerfData.failReason == 'data_processing'){
-                    draw('chart data processing failed');
+                    draw('Diagrammdatenverarbeitung fehlgeschlagen');
                 }else if(parsedPerfData.failReason == 'rate_limiter'){
-                    draw('too many chart requests');
+                    draw('zu viele Diagrammabfragen');
                 }else{
-                    draw('invalid chart data');
+                    draw('ungültige Diagrammdaten');
                 }
             }
         } catch (error) {
-            draw('failed to load chart data');
+            draw('Diagrammdaten können nicht geladen werden');
             console.log(error);
         }
     }
@@ -426,21 +426,21 @@
             message = await txAdminPrompt({
                 modalColor: 'orange',
                 confirmBtnClass: 'btn-orange',
-                title: 'Announcement',
-                description: 'Type the message to be broadcasted to all players.', 
-                placeholder: 'the server will restart in xxx minutes...'
+                title: 'Ankündigung',
+                description: 'Geben Sie die Nachricht ein, die an alle Spieler gesendet werden soll..', 
+                placeholder: 'der Server wird in xxx Minuten neu gestartet...'
             });
 
             if(message.length <= 6){
-                $.notify({ message: 'This message is too short!'}, {type: 'danger'});
+                $.notify({ message: 'Diese Nachricht ist zu kurz!'}, {type: 'danger'});
                 return;
             }
         }else if(action == 'kick_all'){
             message = await txAdminPrompt({
                 modalColor: 'red',
                 confirmBtnClass: 'btn-red',
-                title: 'Kick All Players',
-                description: 'Type the kick reason or leave it blank (press enter)',
+                title: 'Kicke alle Spieler',
+                description: 'Geben Sie den Kick grund ein oder lassen Sie ihn leer (Enter)',
                 required: false,
             });
         }else{
@@ -523,7 +523,7 @@
             typeof hours === 'undefined' || isNaN(hours) || hours < 0 || hours > 23
             || typeof minutes === 'undefined' || isNaN(minutes) || minutes < 0 || minutes > 59
         ){
-            $.notify({ message: 'invalid hours:minutes'}, {type: 'danger'});
+            $.notify({ message: 'ungültige hours:minutes'}, {type: 'danger'});
             return;
         }
 

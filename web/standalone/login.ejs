@@ -194,14 +194,14 @@
                         <% if (template === 'justMessage') { %>
                             <h4 class="text-danger"><%= errorTitle %></h4>
                             <p class="font-weight-bold"><%= errorMessage %></p>
-                            <a href="auth" class="btn btn-primary px-4 mt-3" role="submit">Back</a>
+                            <a href="auth" class="btn btn-primary px-4 mt-3" role="submit">Zurück</a>
                         <% } %>
                         <% if (template === 'noMaster') { %>
-                            <h3 class="mb-4">No <code>Cfx.re</code> Account Linked</h3>
+                            <h3 class="mb-4">Kein <code>Cfx.re</code> Account verknüpft</h3>
                             <div class="mx-auto">
-                                <h6>Type the PIN from your terminal and click "Link Account".</h6>
+                                <h6>Geben Sie die PIN Ihres Terminals ein und klicken Sie auf "Konto verknüpfen".</h6>
                                 <form action="/auth/addMaster/pin" method="post">
-                                    <p class="text-success font-weight-bold mb-0 d-none" id="noMaster-autofill">Autofilled</p>
+                                    <p class="text-success font-weight-bold mb-0 d-none" id="noMaster-autofill">Automatisch gefüllt</p>
                                     <div class="input-group mx-auto" style="max-width: 140px;" id="noMaster-div">
                                         <input class="form-control form-control-lg text-center mb-3" type="text"
                                         minlength="4" maxlength="4" name="pin" placeholder="0000" 
@@ -209,7 +209,7 @@
                                         id="noMaster-pin" autofocus required>
                                     </div>
                                     <button class="btn btn-primary px-4" 
-                                        type="submit">Link Account</button>
+                                        type="submit">Account verknüpfen</button>
                                 </form>
                             </div>
                             <script>
@@ -231,8 +231,8 @@
                             <img class="profile-pic" src="<%= addMaster_picture %>" alt="avatar">
                             <h5 class="mt-2 mb-3 text-muted"><%= addMaster_name %></h5>
 
-                            <h5>Create <i>backup</i> password:</h5>
-                            <span class="text-muted">You will be able to login using this password in case the connection with Cfx.re's auth provider fails.</span>
+                            <h5><i>Backup</i> Passwort erstellen:</h5>
+                            <span class="text-muted">Mit diesem Passwort können Sie sich anmelden, falls die Verbindung mit dem Auth-Provider von Cfx.re fehlschlägt.</span>
                             <form action="/auth/addMaster/save" method="post" class="mt-2">
                                 <div class="input-group mb-2 mx-auto" style="max-width: 280px;">
                                     <div class="input-group-prepend">
@@ -241,7 +241,7 @@
                                         </span>
                                     </div>
                                     <input class="form-control" type="password" name="password" id="password"
-                                        placeholder="Password" autocomplete="new-password" minlength="6" maxlength="24" autofocus required>
+                                        placeholder="Passwort" autocomplete="new-password" minlength="6" maxlength="24" autofocus required>
                                 </div>
                                 <div class="input-group mx-auto" style="max-width: 280px;">
                                     <div class="input-group-prepend">
@@ -250,25 +250,25 @@
                                         </span>
                                     </div>
                                     <input class="form-control" type="password" name="password2" id="password2"
-                                        placeholder="Confirm Password" autocomplete="new-password" required>
+                                        placeholder="Passwort wiederholen" autocomplete="new-password" required>
                                 </div>
                                 <span class="form-text text-muted mb-4">
-                                    Must be between 6 and 24 characters.
+                                    Das Passwort Muss zwischen 6 und 24 Zeichen lang sein.
                                 </span>
 
                                 <div class="input-group mx-auto mb-2" style="max-width: 280px;">
                                     <div class="form-check">
                                         <input class="form-check-input" name="checkboxAcceptToS" id="checkboxAcceptToS" type="checkbox" required>
                                         <label class="form-check-label" for="checkboxAcceptToS">
-                                            I have read and agree to the
+                                            Ich habe gelesen und akzeptiere die
                                             <a href="https://fivem.net/terms" target="_blank" rel="noopener noreferrer">Cfx.re ToS</a>
-                                            as well as the
-                                            <a href="https://github.com/tabarra/txAdmin/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">txAdmin License</a>.
+                                            sowie die
+                                            <a href="https://github.com/tabarra/txAdmin/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">txAdmin Lizenz</a>.
                                         </label>
                                     </div>
                                 </div>
 
-                                <button class="btn btn-primary px-4" id="btnCreateMaster" type="submit" disabled>Create Master Account</button>
+                                <button class="btn btn-primary px-4" id="btnCreateMaster" type="submit" disabled>Master-Konto erstellen</button>
                             </form>
                             <script>
                                 const password = document.getElementById("password");
@@ -291,7 +291,7 @@
                             </script>
                         <% } %>
                         <% if (template === 'normal') { %>
-                            <h1 class="mb-3">Login</h1>
+                            <h1 class="mb-3">Einloggen</h1>
                             <% if (isWebInterface) { %>
                                 <a class="btn cfxrebtn<%= citizenfxDisabled ? ' disabled' : '' %>"
                                    role="button" href="auth/citizenfx/redirect" id="btn-cfxredirect">
@@ -299,7 +299,7 @@
                                 </a>
                             <% } else { %>
                                 <h5 class="text-secondary">
-                                    Automatic login failed, re-open the menu or login using your username/password below.
+                                    Automatische Anmeldung fehlgeschlagen, öffnen Sie das Menü erneut oder melden Sie sich mit Ihrem Benutzernamen/Passwort an.
                                 </h5>
                             <% } %>
                         

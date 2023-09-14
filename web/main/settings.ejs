@@ -56,7 +56,7 @@
 
 
 <div class="text-center mb-4">
-    <h2>Settings</h2>
+    <h2>Einstellungen</h2>
 </div>
 
 
@@ -114,7 +114,7 @@
                                 <input type="text" class="form-control" id="frmGlobal-serverName"
                                     value="<%= (global.serverName !== 'undefined') ? global.serverName : '' %>" maxlength="24" placeholder="server name" <%= readOnly ? 'disabled' : '' %>>
                                 <span class="form-text text-muted">
-                                   A <strong>short</strong> server name to be used in txAdmin interface and Chat/Discord messages.
+                                    Ein <strong>kurzer</strong> Servername, der in der txAdmin-Oberfläche und in Chat/Discord-Nachrichten verwendet wird.
                                 </span>
                             </div>
                         </div>
@@ -130,15 +130,15 @@
                                     <% } %>
                                 </select>
                                 <span class="form-text text-muted">
-                                    The language to use on Chat/Discord messages. <br>
-                                    <b>Note:</b> For the Custom option, read the <a href="https://github.com/tabarra/txAdmin/blob/master/docs/translation.md" target="_blank" rel="noopener noreferrer">documentation</a>.
+                                    Die Sprache für Chat-/Discord-Nachrichten. <br>
+                                    <b>Hinweis:</b> Für die Option Benutzerdefiniert lesen Sie bitte den Abschnitt <a href="https://github.com/tabarra/txAdmin/blob/master/docs/translation.md" target="_blank" rel="noopener noreferrer">Dokumentation</a>.
                                 </span>
                             </div>
                         </div>
 
                         <div class="text-center mt-4">
                             <button class="btn btn-sm btn-primary" type="submit" id="frmGlobal-save" <%= readOnly ? 'disabled' : '' %>>
-                                <i class="icon-check"></i> Save Global Settings
+                                <i class="icon-check"></i> Allgemeine Einstellungen speichern
                             </button>
                         </div>
                     </div>
@@ -147,14 +147,14 @@
                     <!-- FXServer Tab -->
                     <div class="tab-pane fade <%= activeTab === 'fxServer' ? 'active show' : '' %>" id="nav-fxserver" role="tabpanel" aria-labelledby="nav-fxserver-tab">
                         <div class="form-group row">
-                            <label for="frmFXServer-serverDataPath" class="col-sm-3 col-form-label">Server Data Folder
+                            <label for="frmFXServer-serverDataPath" class="col-sm-3 col-form-label">Server Datenordner
                                 <span class="text-danger">*</span></label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" id="frmFXServer-serverDataPath" value="<%= fxserver.serverDataPath || '' %>"
                                     placeholder="C:/Users/Admin/Desktop/server01" <%= readOnly ? 'disabled' : '' %>>
                                 <span class="form-text text-muted">
-                                    The folder that <strong>contains</strong> the <code>resources</code> and
-                                    <code>cache</code> folders, usually it's where you put your <code>server.cfg</code>. <br>
+                                    Der Pfad <strong>enthält</strong> den <code>resources</code> und
+                                    <code>cache</code> ordner, Normalerweise ist es der Ort, an dem Sie Ihre <code>server.cfg</code> Speichern. <br>
                                     <% if (isZapHosting) { %>
                                         <span class="font-weight-bold">ZAP-Hosting warning: this path must start with <code><%= txDataPath %></code>.</span>
                                     <% } %>
@@ -163,28 +163,28 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="frmFXServer-cfgPath" class="col-sm-3 col-form-label">CFG File Path
+                            <label for="frmFXServer-cfgPath" class="col-sm-3 col-form-label">CFG-Dateipfad
                                 <span class="text-danger">*</span></label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" id="frmFXServer-cfgPath" value="<%= fxserver.cfgPath || '' %>"
                                     placeholder="C:/Users/Admin/Desktop/server01/server.cfg" <%= readOnly ? 'disabled' : '' %>>
                                 <span class="form-text text-muted">
-                                    The path to your server config file, usually named <code>server.cfg</code>. <br>
-                                    This can either be absolute, or relative to the Server Data folder.
+                                    Der Pfad zu Ihrer Serverkonfigurationsdatei, normalerweise <code>server.cfg</code> genannt. <br>
+                                    Dies kann entweder absolut oder relativ zum Ordner Server Data sein.
                                 </span>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="frmFXServer-commandLine" class="col-sm-3 col-form-label">
-                                Additional Arguments
+                                Zusätzliche Argumente
                             </label>
                             <div class="col-sm-9">
                                 <textarea id="frmFXServer-commandLine" rows="1" class="form-control expandable-textarea" placeholder="+set sv_enforceGameBuild 2545" <%= readOnly ? 'disabled' : '' %>><%= fxserver.commandLine || '' %></textarea>
                                 <span class="form-text text-muted">
-                                    Additional command-line arguments to pass to the FXServer instance. <br>
-                                    For example, you can add <code>+set</code> and <code>+exec</code> commands. <br>
-                                    <b>Note:</b> These commands can be set inside the <code>server.cfg</code> as well.
+                                    Zusätzliche Befehlszeilenargumente, die an die FXServer-Instanz übergeben werden. <br>
+                                    Sie können zum Beispiel Folgendes hinzufügen <code>+set</code> und <code>+exec</code> Befehle. <br>
+                                    <b>Info:</b> Diese Befehle können auch in der <code>server.cfg</code> gesetzt werden.
                                 </span>
                             </div>
                         </div>
@@ -193,14 +193,14 @@
                             <label for="frmFXServer-onesync" class="col-sm-3 col-form-label">OneSync</label>
                             <div class="col-sm-9">
                                 <select class="form-control" id="frmFXServer-onesync" <%= readOnly ? 'disabled' : '' %>>
-                                    <option value="off" <%= fxserver.onesync === 'off' ? 'selected' : '' %>>Off (default)</option>
-                                    <option value="legacy" <%= fxserver.onesync === 'legacy' ? 'selected' : '' %>>Legacy (without infinity)</option>
-                                    <option value="on" <%= fxserver.onesync === 'on' ? 'selected' : '' %>>On (with infinity)</option>
+                                    <option value="off" <%= fxserver.onesync === 'off' ? 'selected' : '' %>>Aus (Standart)</option>
+                                    <option value="legacy" <%= fxserver.onesync === 'legacy' ? 'selected' : '' %>>Legacy (ohne infinity)</option>
+                                    <option value="on" <%= fxserver.onesync === 'on' ? 'selected' : '' %>>An (mit infinity)</option>
                                 </select>
                                 <span class="form-text text-muted">
-                                    Required if your server has more than 48 slots. <br>
-                                    <b>Note:</b> Setting to <code>on</code> will override <code>onesync_enableInfinity</code> if set as an Additional Argument above. <br>
-                                    <b>Note:</b> Setting onesync in your <code>server.cfg</code> will override this configuration.
+                                    Erforderlich, wenn Ihr Server mehr als 48 Slots hat. <br>
+                                    <b>Info:</b> Die Einstellung <code>An</code> überschreibt den Befehl <code>onesync_enableInfinity</code> falls oben als zusätzliches Argument angegeben. <br>
+                                    <b>Info:</b> Die Einstellung OneSync in der <code>server.cfg</code> setzt diese Konfiguration außer Kraft..
                                 </span>
                             </div>
                         </div>
@@ -214,13 +214,13 @@
                                     <span class="c-switch-slider" data-checked="On" data-unchecked="Off"></span>
                                 </label>
                                 <span class="form-text text-muted">
-                                    Start the server automatically after <strong>txAdmin</strong> starts.
+                                    Starten Sie den Server automatisch nach dem Start von <strong>txAdmin</strong>.
                                 </span>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Quiet Mode</label>
+                            <label class="col-sm-3 col-form-label">Leiser Modus</label>
                             <div class="col-sm-9">
                                 <label class="c-switch c-switch-label c-switch-pill c-switch-success fix-pill-form">
                                     <input class="c-switch-input" type="checkbox" id="frmFXServer-quiet"
@@ -228,15 +228,15 @@
                                     <span class="c-switch-slider" data-checked="Yes" data-unchecked="No"></span>
                                 </label>
                                 <span class="form-text text-muted">
-                                    Do not print FXServer's output to the terminal. <br>
-                                    You will still be able to use the Live Console.
+                                    FXServer-Ausgabe nicht auf das Terminal ausgeben. <br>
+                                    Sie können die Live-Konsole weiterhin nutzen.
                                 </span>
                             </div>
                         </div>
 
                         <div class="text-center mt-4">
                             <button class="btn btn-sm btn-primary" type="submit" id="frmFXServer-save" <%= readOnly ? 'disabled' : '' %>>
-                                <i class="icon-check"></i> Save FXServer Settings
+                                <i class="icon-check"></i> Server Einstellungen Speichern
                             </button>
                         </div>
                     </div>
@@ -246,41 +246,41 @@
                     <div class="tab-pane fade <%= activeTab === 'monitor' ? 'active show' : '' %>" id="nav-monitor" role="tabpanel" aria-labelledby="nav-monitor-tab">
                         <div class="form-group row">
                             <label for="frmMonitor-resourceStartingTolerance" class="col-sm-3 col-form-label">
-                                Resource Starting <br>
-                                Time Limit
+                                Ressource Start<br>
+                                Zeitliche Begrenzung
                             </label>
                             <div class="col-sm-9">
                                 <select class="form-control" id="frmMonitor-resourceStartingTolerance" <%= readOnly ? 'disabled' : '' %>>
-                                    <option value="90" <%= monitor.resourceStartingTolerance === 90 ? 'selected' : '' %>>1.5 minutes (default)</option>
-                                    <option value="180" <%= monitor.resourceStartingTolerance === 180 ? 'selected' : '' %>>3 minutes</option>
-                                    <option value="300" <%= monitor.resourceStartingTolerance === 300 ? 'selected' : '' %>>5 minutes</option>
-                                    <option value="600" <%= monitor.resourceStartingTolerance === 600 ? 'selected' : '' %>>10 minutes</option>
+                                    <option value="90" <%= monitor.resourceStartingTolerance === 90 ? 'selected' : '' %>>1.5 Minuten (Standart)</option>
+                                    <option value="180" <%= monitor.resourceStartingTolerance === 180 ? 'selected' : '' %>>3 Minuten</option>
+                                    <option value="300" <%= monitor.resourceStartingTolerance === 300 ? 'selected' : '' %>>5 Minuten</option>
+                                    <option value="600" <%= monitor.resourceStartingTolerance === 600 ? 'selected' : '' %>>10 Minuten</option>
                                 </select>
                                 <span class="form-text text-muted">
-                                    At server boot, how much time to wait for any single resource to start before restarting the server. <br>
-                                    <strong>Note:</strong> If you are getting <code>failed to start in time</code> errors, increase this value.
+                                    Beim Hochfahren des Servers, wie lange auf den Start einer einzelnen Ressource gewartet werden soll, bevor der Server neu gestartet wird. <br>
+                                    <strong>Info:</strong> Wenn Sie <code>Fehler beim rechtzeitigen Start</code> erhalten, erhöhen Sie diesen Wert.
                                 </span>
                             </div>
                         </div>
                         
                         <div class="form-group row">
-                            <label for="frmMonitor-restarterSchedule" class="col-sm-3 col-form-label">Scheduled Restarts</label>
+                            <label for="frmMonitor-restarterSchedule" class="col-sm-3 col-form-label">Geplante Neustarts</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" id="frmMonitor-restarterSchedule" value="<%= monitor.restarterSchedule || '' %>"
                                     placeholder="05:00, 13:00" <%= readOnly ? 'disabled' : '' %>>
                                 <span class="form-text text-danger" id="frmMonitor-timezoneAlert"></span>
                                 <span class="form-text text-muted">
-                                    At which times of day to restart the server. Leave it blank to disable this feature. <br>
-                                    The time MUST be in the 24-hour format with two digits for hours as well as
-                                    minutes (<code>HH:MM</code>) and the times should be separated by commas. <br>
-                                    <strong>Note:</strong> Make sure your schedule matches your server time and not your local time.
+                                    Zu welchen Tageszeiten der Server neu gestartet werden soll. Lassen Sie das Feld leer, um diese Funktion zu deaktivieren. <br>
+                                    Die Uhrzeit MUSS im 24-Stunden-Format mit zwei Ziffern für die Stunden sowie für die
+                                    Minuten (<code>HH:MM</code>) und die Zeiten sollten durch Kommas getrennt werden.<br>
+                                    <strong>Info:</strong> Stellen Sie sicher, dass Ihr Zeitplan mit der Serverzeit und nicht mit Ihrer Ortszeit übereinstimmt.
                                 </span>
                             </div>
                         </div>
 
                         <div class="text-center mt-4">
                             <button class="btn btn-sm btn-primary" type="submit" id="frmMonitor-save" <%= readOnly ? 'disabled' : '' %>>
-                                <i class="icon-check"></i> Save Monitor/Restarter Settings
+                                <i class="icon-check"></i> Restarter Einstellungen speichern
                             </button>
                         </div>
                     </div>
@@ -405,7 +405,7 @@
 
                         <div class="text-center mt-4">
                             <button class="btn btn-sm btn-primary" type="submit" id="frmPlayerManager-save" <%= readOnly ? 'disabled' : '' %>>
-                                <i class="icon-check"></i> Save Player Manager Settings
+                                <i class="icon-check"></i> Spieler Manager Einstellungen speichern
                             </button>
                         </div>
                     </div>
@@ -414,7 +414,7 @@
                     <!-- Discord Tab -->
                     <div class="tab-pane fade <%= activeTab === 'discord' ? 'active show' : '' %>" id="nav-discord" role="tabpanel" aria-labelledby="nav-discord-tab">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Enable Bot</label>
+                            <label class="col-sm-3 col-form-label">Discord Bot Aktivieren</label>
                             <div class="col-sm-9">
                                 <label class="c-switch c-switch-label c-switch-pill c-switch-success fix-pill-form">
                                     <input class="c-switch-input" type="checkbox" id="frmDiscord-enabled"
@@ -422,14 +422,14 @@
                                     <span class="c-switch-slider" data-checked="Yes" data-unchecked="No"></span>
                                 </label>
                                 <span class="form-text text-muted">
-                                    Enable Discord Integration.
+                                    Discord-Integration aktivieren.
                                 </span>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="frmDiscord-token" class="col-sm-3 col-form-label">
-                                Token
+                                Bot Token
                                 <span class="text-danger">*</span>
                             </label>
                             <div class="col-sm-9">
@@ -438,21 +438,16 @@
                                     placeholder="xxxxxxxxxxxxxxxxxxxxxxxx.xxxxxx.xxxxxxxxxxxxxxxxxxxxxxxxxxx"
                                     maxlength="96" autocomplete="off" <%= readOnly ? 'disabled' : '' %>>
                                 <span class="form-text text-muted">
-                                    To get a token and the bot to join your server, follow these two guides:
-                                    <a href="https://discordjs.guide/preparations/setting-up-a-bot-application.html"
-                                        target="_blank" rel="noopener noreferrer">Setting up a bot application</a> and
-                                    <a href="https://discordjs.guide/preparations/adding-your-bot-to-servers.html"
-                                        target="_blank" rel="noopener noreferrer">Adding your bot to servers</a> <br>
-                                    <strong>Note:</strong> Do not reuse the same token for another bot.  <br>
-                                    <strong>Note:</strong> The bot requires the GUILD MEMBERS intent, which can be set at the
-                                    <a href="https://discord.com/developers/applications" target="_blank" rel="noopener noreferrer">Discord Developer Portal</a>.
+                                    Trage hier deinen Discord Bot Token ein:
+                                    <strong>Info:</strong> Das gleiche Token darf nicht für einen anderen Bot verwendet werden. <br>
+                                    <strong>Info:</strong> Falls du nicht weßt, wie du einen Bot erstellst, den Token findest oder Ähnliches, wende dich bitte an ein Server Developer
                                 </span>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="frmDiscord-guild" class="col-sm-3 col-form-label">
-                                Guild/Server ID
+                                Server ID
                                 <span class="text-danger">*</span>
                             </label>
                             <div class="col-sm-9">
@@ -460,33 +455,27 @@
                                     value="<%= discord.guild || '' %>" 
                                     placeholder="000000000000000000" <%= readOnly ? 'disabled' : '' %>>
                                 <span class="form-text text-muted">
-                                    The ID of the Discord Guild (also known as Discord Server). <br>
-                                    To get the Guild ID, go to Discord's settings and
-                                    <a href="https://support.discordapp.com/hc/article_attachments/115002742731/mceclip0.png"
-                                    target="_blank" > enable developer mode</a>, then right-click on the guild icon select "Copy ID".
+                                    Die ID des Discord Servers <br>
                                 </span>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="frmDiscord-announceChannel" class="col-sm-3 col-form-label">Announcements <br>Channel ID</label>
+                            <label for="frmDiscord-announceChannel" class="col-sm-3 col-form-label">Ankündigungen <br>Kanal-ID</label>
                             <div class="col-sm-9">
                                 <input type="number" class="form-control" id="frmDiscord-announceChannel"
                                     value="<%= discord.announceChannel || '' %>" 
                                     placeholder="000000000000000000" <%= readOnly ? 'disabled' : '' %>>
                                 <span class="form-text text-muted">
-                                    The ID of the channel to send Announcements (eg server restarts). <br>
-                                    You can leave it blank to disable this feature. <br>
-                                    To get the channel ID, go to Discord's settings and
-                                    <a href="https://support.discordapp.com/hc/article_attachments/115002742731/mceclip0.png"
-                                    target="_blank" > enable developer mode</a>, then right-click on the channel name and select "Copy ID".
+                                    Die ID des Kanals zum Senden von Ankündigungen (z.B. Server-Neustarts). <br>
+                                    Sie können das Feld leer lassen, um diese Funktion zu deaktivieren.. <br>
                                 </span>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">
-                                Status Embed
+                                Status Einbetten
                                 <span class="text-danger">*</span>
                             </label>
                             <div class="col-sm-9">
@@ -496,7 +485,7 @@
                                     id="frmDiscord-editStatusEmbedJsonBtn"
                                     <%= readOnly ? 'disabled' : '' %>
                                 >
-                                    <i class="icon-pencil"></i> Change Embed JSON
+                                    <i class="icon-pencil"></i> Embed JSON ändern
                                 </button>
                                 <button
                                     class="btn btn-sm btn-secondary"
@@ -504,7 +493,7 @@
                                     id="frmDiscord-editStatusEmbedConfigJsonBtn"
                                     <%= readOnly ? 'disabled' : '' %>
                                 >
-                                    <i class="icon-pencil"></i> Change Config JSON
+                                    <i class="icon-pencil"></i> Config JSON ändern
                                 </button>
                                 <textarea
                                     id="frmDiscord-statusEmbedJson"
@@ -527,8 +516,8 @@
                                     autocomplete="off"
                                 ><%= defaults.discord.embedConfigJson || '' %></textarea>
                                 <span class="form-text text-muted">
-                                    The server status embed is customizable by editing the two JSONs above. <br>
-                                    <strong>Note:</strong> Use the command <code>/status add</code> on a channel that the bot has the "Send Message" permission to setup the embed.
+                                    Die Einbettung des Serverstatus kann durch Bearbeiten der beiden obigen JSONs angepasst werden. <br>
+                                    <strong>Info::</strong> Verwenden Sie den Befehl <code>/status add</code> in einem Kanal, für den der Bot die Berechtigung "Nachricht senden" hat, um die Einbettung einzurichten.
                                 </span>
                             </div>
                         </div>
@@ -536,7 +525,7 @@
 
                         <div class="text-center mt-4">
                             <button class="btn btn-sm btn-primary" type="submit" id="frmDiscord-save" <%= readOnly ? 'disabled' : '' %>>
-                                <i class="icon-check"></i> Save Discord Settings
+                                <i class="icon-check"></i> Discord Einstellungen Speichern
                             </button>
                         </div>
                     </div>
@@ -657,7 +646,7 @@
 
                         <div class="text-center mt-4">
                             <button class="btn btn-sm btn-primary" type="submit" id="frmMenu-save" <%= readOnly ? 'disabled' : '' %>>
-                                <i class="icon-check"></i> Save Game Settings
+                                <i class="icon-check"></i> Spiel Einstellungen Speichern
                             </button>
                         </div>
                     </div>

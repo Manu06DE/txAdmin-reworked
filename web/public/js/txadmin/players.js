@@ -132,7 +132,7 @@ function processPlayerlistEvents(events) {
     const playerCount = playerlistElement.querySelectorAll('.player').length;
     if (!playerCount) {
         plistMsgElement.hidden = false;
-        plistMsgElement.innerText = `No Players Online.`;
+        plistMsgElement.innerText = `Keine Spieler online.`;
     }
     plistCountElement.textContent = playerCount;
 }
@@ -393,7 +393,7 @@ function showPlayer(playerRef, keepTabSelection = false) {
                         modPlayer.Main.whitelistRemoveBtn.classList.remove('d-none');
                     }
                 } else {
-                    modPlayer.Main.whitelisted.innerText = 'not yet';
+                    modPlayer.Main.whitelisted.innerText = 'noch nichts';
                     if (meta.tmpPerms.whitelist) {
                         modPlayer.Main.whitelistAddBtn.classList.remove('d-none');
                     }
@@ -465,7 +465,7 @@ function setNoteMessage(msg, type) {
     }
 }
 modPlayer.Main.notes.addEventListener('keydown', (event) => {
-    setNoteMessage('Press enter to save.');
+    setNoteMessage('Enter um die Notiz zu Speichern.');
     if (event.keyCode == 13 && !event.shiftKey) {
         event.preventDefault();
         setNoteMessage('Saving...', 'warning');
@@ -476,7 +476,7 @@ modPlayer.Main.notes.addEventListener('keydown', (event) => {
             data: { note: modPlayer.Main.notes.value },
             success: function (data) {
                 if (data.success === true) {
-                    setNoteMessage('Note saved.', 'success');
+                    setNoteMessage('Notiz gespeichert.', 'success');
                 } else {
                     setNoteMessage(data.error || 'unknown error', 'danger');
                 }
@@ -493,7 +493,7 @@ modPlayer.Main.notes.addEventListener('keydown', (event) => {
  * Player whitelist function
  */
 function setPlayerWhitelistStatus(status) {
-    const notify = $.notify({ message: '<p class="text-center">Saving...</p>' }, {});
+    const notify = $.notify({ message: '<p class="text-center">Speichern...</p>' }, {});
     txAdminAPI({
         type: "POST",
         url: `/player/whitelist?${modPlayer.currPlayerRefString}`,
@@ -625,7 +625,7 @@ function banPlayer() {
  */
 function revokeAction(action_id, isModal = false) {
     if (!action_id) {
-        return $.notify({ message: 'Invalid actionID' }, { type: 'danger' });
+        return $.notify({ message: 'Ungültige actionID' }, { type: 'danger' });
     }
 
     const notify = $.notify({ message: '<p class="text-center">Revoking...</p>' }, {});
@@ -638,7 +638,7 @@ function revokeAction(action_id, isModal = false) {
             notify.update('progress', 0);
             if (data.success === true) {
                 notify.update('type', 'success');
-                notify.update('message', 'Action revoked.');
+                notify.update('message', 'Aktion widerrufen.');
                 if (isModal) {
                     showPlayer(modPlayer.currPlayerRef, true);
                 } else {

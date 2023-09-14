@@ -132,7 +132,7 @@ function updateStatusOffline() {
         $('#hostusage-memory-text').html('error');
         document.title = 'ERROR - txAdmin';
         faviconEl.href = `img/favicon_offline.png`;
-        setPlayerlistMessage('Page Disconnected 😓');
+        setPlayerlistMessage('Seite unterbrochen 😓');
     }
 }
 

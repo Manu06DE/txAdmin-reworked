@@ -18,7 +18,14 @@
     <!-- Page CSS -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://unpkg.com/materialize-stepper@3.1.0/dist/css/mstepper.min.css">
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9YSHCD1QV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-Q9YSHCD1QV');
+    </script>
     <style>
         code:not(.keep-original){
             color: #321fdb!important;
@@ -149,20 +156,20 @@
 
                             <!-- Welcome -->
                             <li class="step <%= isReset ? 'done' : 'active' %>">
-                                <div class="step-title waves-effect">Welcome, <%= adminUsername %>!</div>
+                                <div class="step-title waves-effect">Willkommen, <%= adminUsername %>!</div>
                                 <div class="step-content">
                                     <% if (serverProfile === 'default') { %>
-                                        Since you didn't select any profile when starting txAdmin, we selected
-                                        <code>default</code> for you.
+                                        Da Sie beim Start von txAdmin kein Profil ausgewählt haben, haben wir die
+                                        <code>Standardeinstellung</code> für Sie gewählt.
                                     <% } else { %>
-                                        You selected the profile <code><%= serverProfile %></code>.
+                                        Sie haben das Profil gewählt: <code><%= serverProfile %></code>.
                                     <% } %>
                                     <br>
                                     <% if (!isReset) { %>
-                                        This profile is not configured yet, let's do this now?
+                                        Dieses Profil ist noch nicht konfiguriert, lassen Sie uns dies jetzt tun?
                                     <% } %>
                                     <div class="step-actions">
-                                        <button class="btn btn-pill btn-info next-step" type="button">Next</button>
+                                        <button class="btn btn-pill btn-info next-step" type="button">Weiter</button>
                                     </div>
                                 </div>
                             </li>
@@ -172,16 +179,16 @@
                             <li class="step <%= isReset ? 'done' : '' %>">
                                 <div class="step-title waves-effect">Server Name</div>
                                 <div class="step-content">
-                                    A <strong>short</strong> server name to be used in txAdmin interface and
-                                    Chat/Discord messages.
+                                    Ein <strong>kurzer</strong> Servername, der in der txAdmin-Schnittstelle und in
+                                    Chat/Discord Nachrichten verwendet wird.
                                     <input type="text" class="form-control mt-2" id="frmName" maxlength="22"
-                                        minlength="3" placeholder="Happy Server" value="<%= serverName %>" required>
+                                        minlength="3" placeholder="Mein Server" value="<%= serverName %>" required>
                                     <span id="frmNameError" class="text-danger fade-in d-none"></span>
                                     <div class="step-actions">
                                         <button class="btn btn-pill btn-secondary previous-step"
-                                            type="button">Back</button>
+                                            type="button">Zurück</button>
                                         <button class="btn btn-pill btn-info next-step" type="button"
-                                            data-feedback="validateName" id="frmNameSubmitBtn">Next</button>
+                                            data-feedback="validateName" id="frmNameSubmitBtn">Weiter</button>
                                     </div>
                                 </div>
                             </li>
@@ -189,45 +196,45 @@
 
                             <!-- Deployment Type -->
                             <li class="step">
-                                <div class="step-title waves-effect">Deployment Type</div>
+                                <div class="step-title waves-effect">Server bereitstellung</div>
                                 <div class="step-content">
-                                    <strong>Select</strong> how you want to setup your server:
+                                    <strong>Wählen Sie</strong>, wie Sie Ihren Server einrichten möchten:
                                     <div class="bigbutton deployment-type-card border-dark next-step" onclick="selectDeploymentType('popular')">
-                                        <span class="title"><strong>⭐ Popular Recipes</strong> <span class="badge badge-danger">RECOMMENDED</span></span>
+                                        <span class="title"><strong>⭐ Beliebte Rezepte</strong> <span class="badge badge-danger">EMPFEHLENSWERT</span></span>
                                         <br>
                                         <span class="description">
-                                            Select a template from a curated list of community favorites. <br>
-                                            This includes QBCore, ESX and a Default template for you to customize.
+                                            Wählen Sie eine Vorlage aus einer Liste von Community-Favoriten aus.. <br>
+                                            Dazu gehören QBCore, ESX und eine Standardvorlage, die Sie selbst anpassen können..
                                         </span>
                                     </div>
                                     <div class="bigbutton deployment-type-card border-dark next-step" onclick="selectDeploymentType('local')">
-                                        <span class="title"><strong>📁 Existing Server Data</strong></span>
+                                        <span class="title"><strong>📁 Vorhandene Serverdaten</strong></span>
                                         <br>
                                         <span class="description">
-                                            Select an existing server data folder in the host. <br>
-                                            Only select this option if you already have a <code class="keep-original">server.cfg</code> and a <code class="keep-original">resources</code> folder. <br>
-                                            If you are not running fxserver in your computer, you need to first upload those files to the server's host.
+                                            Wählen Sie einen vorhandenen Server-Datenordner auf dem Host. <br>
+                                            Wählen Sie diese Option nur, wenn Sie bereits einen <code class="keep-original">server.cfg</code> und einen <code class="keep-original">resources</code> Ordner haben. <br>
+                                            Wenn Sie fxserver nicht auf Ihrem Computer ausführen, müssen Sie diese Dateien zunächst auf den Host des Servers hochladen.
                                         </span>
                                     </div>
                                     <div class="bigbutton deployment-type-card border-dark next-step" onclick="selectDeploymentType('remote')">
-                                        <span class="title"><strong>📥 Remote URL Template</strong></span>
+                                        <span class="title"><strong>📥 Remote-URL-Vorlage</strong></span>
                                         <br>
                                         <span class="description">
-                                            Based on a Recipe URL in the YAML format. <br>
-                                            You will have the option to edit the Recipe before running it.
+                                            Basierend auf einer Rezeptur-URL im YAML-Format. <br>
+                                            Sie haben die Möglichkeit, das Rezept zu bearbeiten, bevor Sie es ausführen.
                                         </span>
                                     </div>
                                     <div class="bigbutton deployment-type-card border-dark next-step" onclick="selectDeploymentType('custom')">
-                                        <span class="title"><strong>📑 Custom Template</strong></span>
+                                        <span class="title"><strong>📑 Benutzerdefinierte Vorlage</strong></span>
                                         <br>
                                         <span class="description">
-                                            This is recommended if you have a custom recipe-based server or if you are writing your own recipe. 
-                                            You will be asked for the recipe right after this page.
+                                            Dies wird empfohlen, wenn Sie einen benutzerdefinierten, auf Rezepten basierenden Server haben oder wenn Sie Ihr eigenes Rezept schreiben. 
+                                            Sie werden direkt nach dieser Seite nach dem Rezept gefragt.
                                         </span>
                                     </div>
                                     <div class="step-actions">
                                         <button class="btn btn-pill btn-secondary previous-step"
-                                            type="button">Back</button>
+                                            type="button">Zurück</button>
                                     </div>
                                 </div>
                             </li>
@@ -235,7 +242,7 @@
 
                             <!-- Step 4 -->
                             <li class="step">
-                                <div class="step-title waves-effect" id="s4Title"><i>please select deployment type</i></div>
+                                <div class="step-title waves-effect" id="s4Title"><i>Bitte wähle eine Server Einstellung</i></div>
                                 <div class="step-content">
                                     <!-- select template buttons -->
                                     <template id="s4PopularTemplateCardTemplate">
@@ -254,50 +261,50 @@
                                         
                                         <div class="step-actions">
                                             <button class="btn btn-pill btn-secondary previous-step"
-                                                type="button">Back</button>
+                                                type="button">Zurück</button>
                                         </div>
                                     </div>
 
                                     <!-- input url with some minimal backend validation -->
                                     <div class="d-none" id="s4RemoteTemplateDiv">
-                                        The URL for the remote recipe, or the forum thread. <br>
-                                        You can discover new recipes by visiting the <a href="https://forum.cfx.re/c/development/releases/7" target="_blank" rel="noopener noreferrer">CFX Forum</a>.
+                                        Die URL für das Fernrezept oder den Forumsbeitrag. <br>
+                                        Sie können neue Rezepte entdecken, indem Sie die <a href="https://forum.cfx.re/c/development/releases/7" target="_blank" rel="noopener noreferrer">CFX Forum</a> Seite entdecken.
                                         <input type="text" class="form-control mt-2" id="s4RemoteTemplateInput"
                                             placeholder="https://raw.githubusercontent.com/tabarra/CFX-Default-recipe/main/recipe.yaml">
                                         <span id="s4RemoteTemplateInputError" class="text-danger fade-in d-none"></span>
                                         <div class="step-actions">
                                             <button class="btn btn-pill btn-secondary previous-step"
-                                                type="button">Back</button>
+                                                type="button">Zurück</button>
                                             <button class="btn btn-pill btn-info next-step" type="button"
-                                                data-feedback="validateRemoteTemplate">Next</button>
+                                                data-feedback="validateRemoteTemplate">Weiter</button>
                                         </div>
                                     </div>
 
                                     <!-- explain and show some doc links -->
                                     <div class="d-none" id="s4CustomTemplateDiv">
                                         <p>
-                                            In the next page you will be prompted to insert your custom Recipe. <br>
-                                            If you are developing your own recipes, we highly recommend you to check the following:
+                                            Auf der nächsten Seite werden Sie aufgefordert, Ihr eigenes Rezept einzugeben. <br>
+                                            Wenn Sie Ihre eigenen Rezepte entwickeln, empfehlen wir Ihnen dringend, die folgenden Informationen zu prüfen:
                                             <ul class="font-weight-bold">
-                                                <li><a href="https://github.com/tabarra/txAdmin/blob/master/docs/recipe.md" target="_blank" rel="noopener">Recipe Documentation</a></li>
-                                                <li><a href="https://github.com/tabarra/txAdmin-recipes" target="_blank" rel="noopener">Example Recipes</a></li>
+                                                <li><a href="https://github.com/tabarra/txAdmin/blob/master/docs/recipe.md" target="_blank" rel="noopener">Rezept-Dokumentation</a></li>
+                                                <li><a href="https://github.com/tabarra/txAdmin-recipes" target="_blank" rel="noopener">Beispiel-Rezepte</a></li>
                                                 <li><a href="https://discord.gg/NsXGTszYjK" target="_blank" rel="noopener">Discord Support</a></li>
                                             </ul>
                                         </p>
                                         
                                         <div class="step-actions">
                                             <button class="btn btn-pill btn-secondary previous-step"
-                                                type="button">Back</button>
+                                                type="button">Zurück</button>
                                             <button class="btn btn-pill btn-info next-step" 
-                                                type="button">Next</button>
+                                                type="button">Weiter</button>
                                         </div>
                                     </div>
 
                                     <!-- input local data folder -->
                                     <div class="d-none" id="s4LocalDataPathDiv">
-                                        The folder that <strong>contains</strong> the <code>resources</code> and
-                                        <code>cache</code> folders, usually it's here that you put your <code>server.cfg</code>. <br>
-                                        Also known as Base Folder. <br>
+                                        Der Ordner <strong>enthält</strong> den <code>ressourcen</code> und den
+                                        <code>cache</code> ordner, Normalerweise legen Sie hier Ihre <code>server.cfg</code> ab. <br>
+                                        Auch bekannt als Base Folder. <br>
                                         <% if (isZapHosting) { %>
                                             <span class="font-weight-bold">ZAP-Hosting warning: this path must start with <code><%= txDataPath %></code>.</span>
                                         <% } %>
@@ -306,7 +313,7 @@
                                         <span id="s4LocalDataPathInputError" class="text-danger fade-in d-none"></span>
                                         <div class="step-actions">
                                             <button class="btn btn-pill btn-secondary previous-step"
-                                                type="button">Back</button>
+                                                type="button">Zurück</button>
                                             <button class="btn btn-pill btn-info next-step" type="button"
                                                 data-feedback="validateLocalDataFolder" id="s4FolderSubmitBtn">Next</button>
                                             <button class="btn btn-pill btn-outline-primary d-none fade-in" type="button"
@@ -321,50 +328,50 @@
 
                             <!-- Step 5 -->
                             <li class="step">
-                                <div class="step-title waves-effect" id="s5Title"><i>please select deployment type</i></div>
+                                <div class="step-title waves-effect" id="s5Title"><i>Bitte wähle eine Server Einstellung</i></div>
                                 <div class="step-content" id="s5Content">
 
                                     <!-- input local data folder --> 
                                     <div class="d-none" id="s5DeployerTargetDiv">
-                                        The folder where the server will be deployed to. <br>
-                                        This folder will contain all your resources and configuration files. <br>
+                                        Der Ordner, in dem der Server bereitgestellt werden soll. <br>
+                                        Dieser Ordner enthält alle Ihre Ressourcen und Konfigurationsdateien. <br>
                                         <% if (isZapHosting) { %>
                                             <span class="font-weight-bold">ZAP-Hosting warning: this path must start with <code><%= txDataPath %></code>.</span> <br>
                                         <% } %>
-                                        <strong>We strongly recommend using the path suggested below.</strong>                     
+                                        <strong>Wir empfehlen dringend, den unten vorgeschlagenen Weg zu wählen.</strong>                     
                                         <div class="input-group mt-2">
                                             <input type="text" class="form-control" id="s5DeployerTargetInput"
                                                 placeholder="C:/Users/Admin/Desktop/server01/server.cfg" disabled>
                                             <span class="input-group-append">
                                                 <button class="btn btn-sm btn-outline-dark" type="button" id="s5DeployerTargetChangeBtn"
-                                                    onclick="s5DeployerTargetEnablePath()">Change Path</button>
+                                                    onclick="s5DeployerTargetEnablePath()">Pfad ändern</button>
                                             </span>
                                         </div>
                                         <span id="s5DeployerTargetError" class="text-danger fade-in d-none"></span>
                                         <div class="step-actions">
                                             <button class="btn btn-pill btn-secondary previous-step"
-                                                type="button">Back</button>
+                                                type="button">Zurück</button>
                                             <button class="btn btn-pill btn-info next-step" type="button"
-                                                data-feedback="validateLocalDeployPath" id="s5DeployerTargetSubmitBtn">Save</button>
+                                                data-feedback="validateLocalDeployPath" id="s5DeployerTargetSubmitBtn">Speichern</button>
                                         </div>
                                     </div>
 
                                     <!-- input server cfg file -->
                                     <div class="d-none" id="s5ServerCFGDiv">
-                                        The path to your server config file, usually named <code>server.cfg</code>. <br>
-                                        This can either be absolute, or relative to the Server Data folder.
+                                        Der Pfad zu Ihrer Serverkonfigurationsdatei, die normalerweise den Namen <code>server.cfg</code> hat. <br>
+                                        Dies kann entweder absolut oder relativ zum Ordner Server Data sein.
                                         <input type="text" class="form-control mt-2" id="s5ServerCFGInput"
                                             placeholder="C:/Users/Admin/Desktop/server01/server.cfg">
                                         <p class="text-success font-weight-bold mb-0 d-none" id="s5ServerCFGAutofill">
-                                            Config file detected! If this file is correct, just click on the save button below.
+                                            Config-Datei gefunden! Wenn diese Datei korrekt ist, klicken Sie einfach auf die Schaltfläche "Speichern" unten.
                                         </p>
                                         <span id="s5ServerCFGError" class="text-danger fade-in d-none"></span>
                                         <div class="step-actions">
                                             <div class="step-actions">
                                                 <button class="btn btn-pill btn-secondary previous-step"
-                                                    type="button">Back</button>
+                                                    type="button">Zurück</button>
                                                 <button class="btn btn-pill btn-info next-step" type="button"
-                                                    data-feedback="validateCFGFile" id="s5ServerCFGSubmitBtn">Save</button>
+                                                    data-feedback="validateCFGFile" id="s5ServerCFGSubmitBtn">Speichern</button>
                                             </div>
                                         </div>
                                     </div>
@@ -375,18 +382,18 @@
 
                             <!-- Finish -->
                             <li class="step">
-                                <div class="step-title waves-effect">Finish</div>
+                                <div class="step-title waves-effect">Fertig</div>
                                 <div class="step-content">
-                                    <h4 id="finishMessage">We are all set!</h4>
+                                    <h4 id="finishMessage">Wir sind bereit!</h4>
                                     <% if (windowsBatPath) { %>
-                                        You can run this profile by executing: <br>
+                                        Sie können dieses Profil ausführen: <br>
                                         <code><%= windowsBatPath %></code> <br>
                                     <% } %>
                                     <span id="saveError" class="text-danger fade-in d-none"></span>
                                     <div class="step-actions">
                                         <button class="btn btn-pill btn-success next-step" type="button" 
                                             data-feedback="performSave" id="finishButton">
-                                            Save & Start Server</button>
+                                            Server speichern und starten</button>
                                     </div>
                                 </div>
                             </li>
@@ -396,34 +403,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Info Row -->
-        <div class="row justify-content-center">
-            <div class="col-md-4 ">
-                <div class="alert alert-secondary text-center small" style="min-width: 280px;" role="alert">
-                    <strong>Server profile:</strong> <%= serverProfile %> <br>
-                    <strong>txAdmin version:</strong> <%= txAdminVersion %> <br>
-                    <strong>FXServer build:</strong> <%= fxServerVersion %>
-                    <div class="hrsep hrsep-small">//</div>
-                    <!-- <h5 class="text-muted">
-                        <strong>txAdmin</strong> Official Discord: <br>
-                        <a href="https://discord.gg/uAmsGa2" target="_blank">
-                            <img src="https://discordapp.com/api/guilds/577993482761928734/widget.png?style=shield"></img>
-                        </a>
-                    </h5> -->
-                </div>
-
-                <div style="text-align: center" class="pb-3">
-                    <svg class="c-sidebar-nav-icon d-none" id="darkToggleLight">
-                        <use href="img/coreui_icons.svg#cil-sun"></use>
-                    </svg>
-                    <svg class="c-sidebar-nav-icon" id="darkToggleDark">
-                        <use href="img/coreui_icons.svg#cil-moon"></use>
-                    </svg>
-                </div>
-            </div>
-        </div>
-
 
     </div>
     <!-- CoreUI and necessary plugins-->
@@ -563,10 +542,10 @@
             selectedDeploymentType = depType;
             selectedTemplateURL = null;
             if(depType == 'popular' || depType == 'remote'){
-                s4Title.textContent = "Select Template";
-                s5Title.textContent = "Data Location";
-                finishButton.textContent = "Go to Recipe Deployer";
-                finishMessage.textContent = "We are almost there!";
+                s4Title.textContent = "Vorlage auswählen";
+                s5Title.textContent = "Daten Standort";
+                finishButton.textContent = "Zum Rezepturverteiler gehen";
+                finishMessage.textContent = "Wir sind fast da!";
                 s4PopularTemplateRow.innerHTML = SPINNER_HTMLSized;
                 s4CustomTemplateDiv.classList.add('d-none');
                 s4LocalDataPathDiv.classList.add('d-none');
@@ -588,9 +567,9 @@
                 deploymentID = deployData.id;
 
                 s4Title.textContent = "Information";
-                s5Title.textContent = "Data Location";
-                finishButton.textContent = "Go to Recipe Deployer";
-                finishMessage.textContent = "We are almost there!";
+                s5Title.textContent = "Daten Standort";
+                finishButton.textContent = "Zum Rezepturverteiler gehen";
+                finishMessage.textContent = "Wir sind fast am Ziel!";
                 s4CustomTemplateDiv.classList.remove('d-none');
                 s4RemoteTemplateDiv.classList.add('d-none');
                 s4PopularTemplateDiv.classList.add('d-none');
@@ -599,10 +578,10 @@
                 s5ServerCFGDiv.classList.add('d-none');
                 
             }else if(depType == 'local'){
-                s4Title.textContent = "Existing Server Data";
-                s5Title.textContent = "Server CFG File";
-                finishButton.textContent = "Save & Start Server";
-                finishMessage.textContent = "We are all set!";
+                s4Title.textContent = "Vorhandene Serverdaten";
+                s5Title.textContent = "Server-CFG-Datei";
+                finishButton.textContent = "Server speichern und starten";
+                finishMessage.textContent = "Wir sind alle bereit!";
                 s4PopularTemplateDiv.classList.add('d-none');
                 s4CustomTemplateDiv.classList.add('d-none');
                 s4RemoteTemplateDiv.classList.add('d-none');

@@ -217,7 +217,7 @@
             <!-- Zap Hosting Ad - Mobile -->
             <% if (dynamicAd) { %>
                 <li class="c-sidebar-nav-title d-lg-none" style="background-color: rgba(0, 0, 0, 0.178);">
-                    <a class="zapAdContainer" href="<%= dynamicAd.linkMobile %>" target="_blank" rel="noopener noreferrer">
+                    <!-- <a class="zapAdContainer" href="<%= dynamicAd.linkMobile %>" target="_blank" rel="noopener noreferrer">
                         <img class="zapLogo" alt="zap hosting" src="<%= dynamicAd.logoDarkMode %>">
                         <div class="zapText text-light">
                             <%- dynamicAd.text %>
@@ -225,7 +225,7 @@
                                 <use href="img/coreui_icons.svg#cil-external-link"></use>
                             </svg>
                         </div>
-                    </a>
+                    </a> -->
                 </li>
             <% } %>
 
@@ -267,7 +267,7 @@
             <header class="c-header c-header-light c-header-fixed c-header-with-subheader">
                 <!-- Zap Hosting Ad - Desktop -->
                 <% if (dynamicAd) { %>
-                    <a class="zapAdContainer d-md-down-none" href="<%= dynamicAd.linkDesktop %>" target="_blank" rel="noopener noreferrer">
+                    <!-- <a class="zapAdContainer d-md-down-none" href="<%= dynamicAd.linkDesktop %>" target="_blank" rel="noopener noreferrer">
                         <img class="zapLogo show-dark-mode" alt="zap hosting" src="<%= dynamicAd.logoDarkMode %>">
                         <img class="zapLogo show-light-mode" alt="zap hosting" src="<%= dynamicAd.logoLightMode %>">
                         <div class="zapText attentionText">
@@ -276,7 +276,7 @@
                                 <use href="img/coreui_icons.svg#cil-external-link"></use>
                             </svg>
                         </div>
-                    </a>
+                    </a> -->
                 <% } %>
 
                 <button class="c-header-toggler c-class-toggler d-lg-none mfe-auto" type="button" data-target="#sidebar"
@@ -297,45 +297,6 @@
                             <svg class="c-sidebar-nav-icon" id="darkToggleDark">
                                 <use href="img/coreui_icons.svg#cil-moon"></use>
                             </svg>
-                        </div>
-                    </li>
-
-                    <li class="c-header-nav-item mx-1">
-                        <a class="" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                            aria-expanded="false">
-                            <svg class="c-icon mr-2">
-                                <use href="img/coreui_icons.svg#cil-layers"></use>
-                            </svg>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right pt-0">
-                            <div class="dropdown-header py-2">
-                                <strong>Anderes</strong>  
-                            </div>
-                            <a class="dropdown-item" href="http://116.202.50.176/phpmyadmin">
-                                <svg class="c-icon mr-2">
-                                    <use href="img/coreui_icons.svg#cil-storage"></use>
-                                </svg> Datenbank 
-                            </a>
-                            <a class="dropdown-item" href="https://trello.com/b/pM8yxA2t/bayern-roleplay-development">
-                                <svg class="c-icon mr-2">
-                                    <use href="img/coreui_icons.svg#cil-code"></use>
-                                </svg> Trello (Development)
-                            </a>
-                            <a class="dropdown-item" href="https://bayern-roleplay.de">
-                                <svg class="c-icon mr-2">
-                                    <use href="img/coreui_icons.svg#cil-browser"></use>
-                                </svg> Website 
-                            </a>
-                            <a class="dropdown-item" href="https://bayern-roleplay.de/Netzwerk/admin-cp">
-                                <svg class="c-icon mr-2">
-                                    <use href="img/coreui_icons.svg#cil-chat-bubble"></use>
-                                </svg> BRP Netzwerk Admin 
-                            </a>
-                            <a class="dropdown-item" href="https://116.202.50.176:9090">
-                                <svg class="c-icon mr-2">
-                                    <use href="img/coreui_icons.svg#cil-user"></use>
-                                </svg> System Manager 
-                            </a>
                         </div>
                     </li>
 
@@ -368,16 +329,26 @@
                             <a class="dropdown-item" href="https://status.cfx.re">
                                 <svg class="c-icon mr-2">
                                     <use href="img/coreui_icons.svg#cil-code"></use>
-                                </svg> Status Cfx.re
+                                </svg>  Cfx.re Status
                             </a>
                             <a class="dropdown-item" href="https://docs.fivem.net/docs/">
                                 <svg class="c-icon mr-2">
                                     <use href="img/coreui_icons.svg#cil-code"></use>
                                 </svg> Cfx.re Docs (Alles)
                             </a>
+                            <a class="dropdown-item" href="https://keymaster.fivem.net">
+                                <svg class="c-icon mr-2">
+                                    <use href="img/coreui_icons.svg#cil-code"></use>
+                                </svg> Cfx.re Keymaster
+                            </a>
+                            <a class="dropdown-item" href="https://forum.cfx.re">
+                                <svg class="c-icon mr-2">
+                                    <use href="img/coreui_icons.svg#cil-code"></use>
+                                </svg> Cfx.re Forum
+                            </a>
                         </div> 
                     </li>
-
+                    
                     <li class="c-header-nav-item dropdown">
                         <a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                             aria-expanded="false">

@@ -8,7 +8,7 @@ const REQ_TIMEOUT_MEDIUM = 5_000;
 const REQ_TIMEOUT_LONG = 9_000;
 const REQ_TIMEOUT_REALLY_LONG = 15_000;
 const REQ_TIMEOUT_REALLY_REALLY_LONG = 30_000;
-const SPINNER_HTML = '<div class="txSpinner">Loading...</div>';
+const SPINNER_HTML = '<div class="txSpinner">Laden...</div>';
 
 //Helpers
 const anyUndefined = (...args) => { return [...args].some((x) => (typeof x === 'undefined')); };
