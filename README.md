@@ -55,7 +55,7 @@ Zu jedem Archiv wurden 2 Extra datein mit geliefert namens `header.ejs` und `ind
 - Oben neben dem Benutzernamen, gibt es nun ein Dropdown Menü mit 1/2 Tools
 - Das Limit bei "Letzte 25 Aktionen" & "Letzte 30 verbundene Spieler" wurde auf 40 gesetzt.
 - Eins / zwei kleinere Änderungen
-
+- Die Werbung wurde entfernt
 
 ## Folgende Seiten sind schon vollständig übersetzt
 - Login Screen
@@ -69,14 +69,9 @@ Zu jedem Archiv wurden 2 Extra datein mit geliefert namens `header.ejs` und `ind
 - Server Deployer
 - Server Setup Screen
 
-
-## Was (derzeit) nicht machbar ist
-- Werbung entfernen (ich arbeite an einer Lösung)
-- Auf jede FXServer Version ein Update erstellen
-
 ## Was in zukunft geplant ist:
 - Dashboard Server Status übersetzungen
-- Ingame Menü auf Deutsch übersetzten
+- Ingame Menü auf Deutsch übersetzten (Mal aschauen in wie fern das Nötig sein wird)
 - Weitere txAdmin Features o. Ä. hinzufügen
 - Zeitnahe neuveröffentlichung von neuen txAdmin Updates, damit man immer auf dem Neusten Stand ist
  
