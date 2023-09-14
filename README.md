@@ -23,6 +23,12 @@ NUR Linux: Damit die Datei immer ausführt erstelle einen (am besten) Cronjob
 2. `@reboot /pfad/zur/run.sh` datei
 3. Den Crobjob Speichern
 
+**Die TxAdmin-reworked Version ist für folgende FXServer Versionen kompatibel:**
+- `6683` (Derzeit die Neuste Version)
+- `6681`
+- `6645`
+
+
 ## 4 verschiedene Installationarten
 - Es gibt, seid diesem v1.3 Update 4 verschiedene Installationsarten.
 - Jede Installationsart gibt es einmal als  `.rar ` und als  `.zip `
