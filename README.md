@@ -37,6 +37,8 @@ Es gibt nun txAdmin auch für die Win32 version.
 
 Die `txAdmin-full-`installationen, sind komplette txAdmin Installationen, also so, wie ihr sie auch über die [artifacts (linux)](https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/) / [artifacts (win32)](https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/) downloaden würdet
 
+**NUR FÜR WIN32:** Es kann auch anstatt die  `txAdmin-full-install-win32.rar/.zip ` auch nur die  `.exe` ausgeführt werden. Dort könnt ihr die Datein dann alle Automatisch installieren lassen
+
 Bei der `txAdmin-easy-`installation muss man nur dein jeweiliger Ordner ersetzten. Dies ist anwendbar, wenn txAdmin bereits installiert ist.
 
 Der name `..-install-linux` oder `..-install-win32` beschreibt das Betriebssystem
