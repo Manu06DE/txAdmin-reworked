@@ -70,6 +70,7 @@ Zu jedem Archiv wurden 2 Extra datein mit geliefert namens `header.ejs` und `ind
 - Server Setup Screen
 
 ## Was in zukunft geplant ist:
+- Fertigstellung der Kompletten txAdmin Übersetzung auf Deutsch
 - Dashboard Server Status übersetzungen
 - Ingame Menü auf Deutsch übersetzten (Mal aschauen in wie fern das Nötig sein wird)
 - Weitere txAdmin Features o. Ä. hinzufügen
