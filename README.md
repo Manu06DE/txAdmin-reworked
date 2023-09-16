@@ -1,6 +1,6 @@
 ## Allgemeines und Hinweise
 
-txAdmin übersetzt in die Deutsche Sprache.
+txAdmin übersetzt in die Deutsche Sprache und ein paar Veränderungen
 
 Dieser Release ist noch **nicht** final. Weitere Übersetzungen und Updates kommen noch.
 
