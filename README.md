@@ -1,3 +1,11 @@
+<h1>INFORMATION 27.09.2023</h1>
+<p>Da ich derzeit wenig zeit habe, muss ich weitere Updates auf später verschieben</p>                
+<p>Die Nächsten Update werden bald Verfügbar sein.</p>
+
+<p>Vorraussichtlich werde ich ab dem 15.10.2023 wieder in Ruhe weiterarbeiten können</p>
+
+<p>Danke für euer Verständnis!</p>
+
 ## Allgemeines und Hinweise
 
 txAdmin übersetzt in die Deutsche Sprache und ein paar Veränderungen
@@ -5,6 +13,8 @@ txAdmin übersetzt in die Deutsche Sprache und ein paar Veränderungen
 Dieser Release ist noch **nicht** final. Weitere Übersetzungen und Updates kommen noch.
 
 Bitte fertige ein Backup an, falls diese Version **_nicht_** kompatibel ist!
+
+
 
 ## Installation
 1. Lade einer der `.zip` oder `.rar` Dateien über [Releases](https://github.com/Manu06DE/txAdmin-reworked/releases/) herunter
