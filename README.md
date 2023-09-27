@@ -1,6 +1,6 @@
 <h1>INFORMATION 27.09.2023</h1>
 <p>Da ich derzeit wenig zeit habe, muss ich weitere Updates auf später verschieben</p>                
-<p>Die Nächsten Update werden bald Verfügbar sein.</p>
+<p>Die Nächsten Updates werden bald Verfügbar sein.</p>
 
 <p>Vorraussichtlich werde ich ab dem 15.10.2023 wieder in Ruhe weiterarbeiten können</p>
 
