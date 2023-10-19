@@ -98,9 +98,16 @@ txData/alpine/opt/cfx-server/citizen/system_resources/monitor/core/
 
 
 ## Sonstiges
-Außerdem kann man bei Bedarf die Logos ersetzten. 
-Diese findest du in diesem Pfad: deinserver/alpine/opt/cfx-server/citizen/system_resources/monitor/web/public/img
+**Wie man die Logos ersetzt**
+- Diese findest du in diesem Pfad: deinserver/alpine/opt/cfx-server/citizen/system_resources/monitor/web/public/img
 
+
+**Neuigkeiten-Feld ändern**
+- Gehe in diesen Pfad: deinserveronly deinserver/alpine/opt/cfx-server/citizen/system_resources/monitor/web/main/dashboard.ejs
+- Scrolle runter zu zeile: `275`
+- Nun kannst du dort den Inhalt verändern
+
+  **WICHTIG** Damit die änderungen angezeit werden, muss der Komplette Server neugestartet werden
 
 
 ## Bilder
