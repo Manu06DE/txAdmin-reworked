@@ -32,7 +32,7 @@ NUR Linux: Damit die Datei immer ausführt erstelle einen (am besten) Cronjob
 3. Den Crobjob Speichern
 
 ## Kompatible FXServer Versionen
-- `6683` (Derzeit die Neuste Version)
+- `6683`
 - `6681`
 - `6645`
 
